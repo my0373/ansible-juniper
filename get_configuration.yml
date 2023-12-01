@@ -1,19 +1,14 @@
 ---
 - name: Get running configuration
   hosts: all
-  gather_facts: no 
+  gather_facts: yes
 
   tasks:
   - name: "get running configuration" 
     junipernetworks.junos.junos_command:
       commands:
-        - show configuration | match system-global | display=yes
-        - show configuration | match interfaces
-        - show interfaces
         - show running-config
-      wait_for:
-        - result[0] contains Configuration
-        - result[1] contains interfaces
+
     register: reply_junos
         
 
