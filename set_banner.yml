@@ -3,7 +3,7 @@
   ## We specify all here, but in the demo we can override this to rtr1-4
   hosts: all
 
-  gather_facts: no
+  gather_facts: yes
 
   tasks:
   
