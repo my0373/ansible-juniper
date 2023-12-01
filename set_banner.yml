@@ -13,6 +13,9 @@
       text: "{{ lookup('ansible.builtin.template', './templates/banner_template1.j2') }}"
       state: present
   
+  - name: Print all available facts
+    ansible.builtin.debug:
+      var: ansible_facts
     
         
 
