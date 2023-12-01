@@ -1,9 +1,9 @@
 Welcome to your new {{ banner_name | default("juniper")}} system.
-Hostname : {{ net_hostname | default("Hostname not set")}}
-Model : {{ net_model }}
-Python Version : {{ net_python_version }}
-Serial Number : {{ net_serialnum }}
-Operating System : {{net_system}} - version {{ net_version }} 
+Hostname : {{ ansible_facts["net_hostname"] | default("Hostname not set")}}
+Model : {{ ansible_facts["net_model"] }}
+Python Version : {{ ansible_facts["net_python_version"] }}
+Serial Number : {{ ansible_facts["net_serialnum"] }}
+Operating System : {{ansible_facts["net_system"]}} - version {{ ansible_facts["net_version"] }} 
 
 Please use this system responsibly
 
