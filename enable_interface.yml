@@ -15,4 +15,5 @@
       config:
         - enabled: true
           name: "{{ interface_name }}"
+      state: overridden
     
