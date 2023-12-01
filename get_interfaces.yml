@@ -16,6 +16,7 @@
   
   - name: "Get interfaces using the native module"
     junipernetworks.junos.junos_interfaces:
+      running_config:
       state: gathered
     register: mryinterfaces
 
