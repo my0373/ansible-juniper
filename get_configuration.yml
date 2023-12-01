@@ -1,15 +1,22 @@
 ---
 - name: Get running configuration
+  ## We specify all here, but in the demo we can override this to rtr1-4
   hosts: all
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
-  - name: "get running configuration" 
+  - name: "get running configuration from juniper"
     junipernetworks.junos.junos_command:
       commands:
-        - show running-config
+        - show configuration
+    register: running_config
+  
 
-    register: reply_junos
+  - name: "Debug print the variable junos_facts"
+    ansible.builtin.debug:
+      msg: "{{ running_config }}"
+  
+    
         
 
 

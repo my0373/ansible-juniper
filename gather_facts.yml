@@ -1,10 +1,11 @@
 ---
 - name: Get running configuration
+  ## We specify all here, but in the demo we can override this to rtr1-4
   hosts: all
   gather_facts: no
 
   tasks:
-  - name: "get running configuration" 
+  - name: "Gather facts about the JunOS system" 
     junipernetworks.junos.junos_facts:
       gather_network_resources: all
     register: junos_facts
