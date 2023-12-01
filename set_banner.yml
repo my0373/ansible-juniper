@@ -2,8 +2,7 @@
 - name: Update the JunOS banner from a template 
   ## We specify all here, but in the demo we can override this to rtr1-4
   hosts: all
-  vars:
-    banner_template: './templates/banner.j2'
+
   gather_facts: no
 
   tasks:
@@ -11,7 +10,7 @@
   - name: "load the juniper banner from the template templates/banner.j2"
     junipernetworks.junos.junos_banner:
       banner: motd
-      text: "{{ lookup('ansible.builtin.template', {{ banner_template }}) }}"
+      text: "{{ lookup('ansible.builtin.template', './templates/banner_template1.j2') }}"
       state: present
   
     
