@@ -5,10 +5,11 @@
   gather_facts: no
 
   tasks:
+  
   - name: "load the juniper banner from the template templates/banner.j2"
     junipernetworks.junos.junos_banner:
       banner: motd
-      text: "{{ lookup('file', './templates/banner.j2') }}"
+      text: "{{ lookup('ansible.builtin.template', './templates/banner.j2') }}"
       state: present
   
     
