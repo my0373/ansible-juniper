@@ -8,13 +8,13 @@
   - name: "get running configuration from juniper"
     junipernetworks.junos.junos_command:
       commands:
-        - show configuration
-    register: running_config
+        - show interfaces
+    register: running_interfaces
   
 
-  - name: "Debug print the running configuration"
+  - name: "Debug print the interface configuration"
     ansible.builtin.debug:
-      msg: "{{ running_config }}"
+      msg: "{{ running_interfaces }}"
   
     
         
