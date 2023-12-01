@@ -1,0 +1,16 @@
+---
+- name: Get running configuration
+  ## We specify all here, but in the demo we can override this to rtr1-4
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: Add a description to an interface 
+    junipernetworks.junos.junos_interfaces:
+      config:
+        - name: "{{ interface_name }}"
+          description: "{{ interface_message  | default('Interface managed by Ansible') }}"
+      state: merged
+        
+
+
