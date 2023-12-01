@@ -1,0 +1,13 @@
+---
+- name: Get running configuration
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: "get running configuration" 
+    junipernetworks.junos.junos_facts:
+      gather_network_resources: all
+    
+        
+
+
