@@ -11,7 +11,7 @@
   gather_facts: no
 
   tasks:
-  - name: Add a description and shut down an interface 
+  - name: Add a description and manage an interface 
     junipernetworks.junos.junos_interfaces:
       config:
         - name: "{{ interface_name }}"
