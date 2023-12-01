@@ -1,22 +1,21 @@
 ---
-- name: Get running configuration
+- name: enable a network interface on a Juniper device
   ## We specify all here, but in the demo we can override this to rtr1-4
   hosts: all
   vars:
     ## Some example variables to allow us to shut down or bring up a network interface 
     interface_message: ""
     interface_name: "gr-0/0/0"
-    interface_status: true 
 
   gather_facts: no
 
   tasks:
-  - name: Add a description and manage an interface 
+  - name: Add a description and enable an interface 
     junipernetworks.junos.junos_interfaces:
       config:
         - name: "{{ interface_name }}"
           description: "{{ interface_message  | default('Interface managed by Ansible') }}"
-          enabled: interface_status
+          enabled: true
       state: merged
     
         
