@@ -13,10 +13,8 @@
   - name: Add a description and enable an interface 
     junipernetworks.junos.junos_interfaces:
       config:
-        - name: "{{ interface_name }}"
-          description: "{{ interface_message  | default('Interface managed by Ansible') }}"
-          enabled: true
-      state: replaced
-        
+          config:
+          - name: "{{ interface_name }}"
+            enabled: true
 
 
