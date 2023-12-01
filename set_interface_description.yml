@@ -22,10 +22,6 @@
           description: Configured by Ansible-2
           enabled: false
       state: merged
-
-  - name: "Debug print the interface configuration"
-    ansible.builtin.debug:
-      msg: "{{ mryinterfaces.gathered }}"
     
         
 
