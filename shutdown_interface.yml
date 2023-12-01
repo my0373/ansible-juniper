@@ -16,7 +16,7 @@
       config:
         - name: "{{ interface_name }}"
           description: "{{ interface_message  | default('Interface managed by Ansible') }}"
-          enabled: "{{ interface_status }}"
+          enabled: interface_status
       state: merged
     
         
