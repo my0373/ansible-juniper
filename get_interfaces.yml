@@ -12,10 +12,16 @@
     register: running_interfaces
   
 
+
+  
+  - name: "Get interfaces using the native module"
+    junipernetworks.junos.junos_interfaces:
+      state: gathered
+    register: mryinterfaces
+
   - name: "Debug print the interface configuration"
     ansible.builtin.debug:
-      msg: "{{ running_interfaces.stdout }}"
-  
+      msg: "{{ mryinterfaces }}"
     
         
 
