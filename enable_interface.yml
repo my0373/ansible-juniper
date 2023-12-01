@@ -16,8 +16,7 @@
         - name: "{{ interface_name }}"
           description: "{{ interface_message  | default('Interface managed by Ansible') }}"
           enabled: true
-      state: merged
-    
+      state: replaced
         
 
 
