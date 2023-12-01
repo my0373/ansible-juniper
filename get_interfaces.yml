@@ -21,7 +21,7 @@
 
   - name: "Debug print the interface configuration"
     ansible.builtin.debug:
-      msg: "{{ mryinterfaces }}"
+      msg: "{{ mryinterfaces.gathered }}"
     
         
 
