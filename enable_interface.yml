@@ -15,5 +15,6 @@
       config:
         - enabled: true
           name: "{{ interface_name }}"
+          speed: "800mbps"
       state: overridden
     
