@@ -10,11 +10,9 @@
   gather_facts: no
 
   tasks:
-  - name: Add a description and enable an interface 
+  - name: Override device configuration of all interfaces with provided configuration
     junipernetworks.junos.junos_interfaces:
       config:
-          config:
-          - name: "{{ interface_name }}"
-            enabled: true
-
-
+        - enabled: true
+          name: "{{ interface_name }}"
+    
