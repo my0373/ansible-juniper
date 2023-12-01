@@ -1,0 +1,21 @@
+---
+- hosts: all
+- tasks:
+  - name: "Get the running configuration from a juniper switch"
+    junipernetworks.junos.junos_command:
+      commands:
+        - show configuration | match system-global | display=yes
+        - show configuration | match interfaces
+        - show interfaces
+        - show running-config
+      wait_for:
+        - result[0] contains Configuration
+        - result[1] contains interfaces
+    register: reply_junos
+
+  - name: "print the variable reply_junos"
+    ansible.builtin.debug:
+      var: reply_junos
+      
+
+
