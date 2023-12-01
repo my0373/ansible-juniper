@@ -15,7 +15,7 @@
     junipernetworks.junos.junos_interfaces:
       config:
         - name: "{{ interface_name }}"
-          description: "{{ interface_message  | default(Interface managed by Ansible) }}"
+          description: "{{ interface_message  | default('Interface managed by Ansible') }}"
           enabled: "{{ interface_status }}"
       state: merged
     
