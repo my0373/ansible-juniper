@@ -14,7 +14,7 @@
 
   - name: "Debug print the interface configuration"
     ansible.builtin.debug:
-      msg: "{{ running_interfaces }}"
+      msg: "{{ running_interfaces.stdout }}"
   
     
         
