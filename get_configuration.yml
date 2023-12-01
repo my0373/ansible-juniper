@@ -14,7 +14,7 @@
 
   - name: "Debug print the running configuration"
     ansible.builtin.debug:
-      msg: "{{ running_config }}"
+      msg: "{{ running_config.stdout }}"
   
     
         
